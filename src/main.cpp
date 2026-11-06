@@ -1,4 +1,3 @@
-
 #include <Arduino.h>
 #include <esp_arduino_version.h>
 #include <math.h>
@@ -38,10 +37,10 @@ struct {
 // 2. PINES Y PWM
 // ---------------------------------------------------------------------------
 // SE MANTIENE el cableado del programa original, sujeto a verificacion.
-constexpr uint8_t MOTOR_IZQ_1 = 3;
-constexpr uint8_t MOTOR_IZQ_2 = 4;
-constexpr uint8_t MOTOR_DER_1 = 5;
-constexpr uint8_t MOTOR_DER_2 = 6;
+constexpr uint8_t MOTOR_IZQ_1 = 20;
+constexpr uint8_t MOTOR_IZQ_2 = 21;
+constexpr uint8_t MOTOR_DER_1 = 1;
+constexpr uint8_t MOTOR_DER_2 = 2;
 constexpr uint8_t LED_ESTADO = 8;
 
 // NO CAMBIA: el original YA TENIA PWM, a 20 kHz y con 8 bits.
@@ -79,7 +78,7 @@ constexpr bool INVERTIR_DER = false;
 
 // Dejar en 0 hasta medir el PWM minimo que vence la friccion del motor.
 // Si se eleva, cuanto mas cerca del centro, menos fino puede ser el arranque.
-constexpr int PWM_MINIMO = 0;
+constexpr int PWM_MINIMO = 45;
 
 // Rampa por cada PERIODO_CONTROL_MS (no por vuelta del loop).
 // Aumentar PASO_ACELERACION => acelera mas rapido.
